@@ -29,28 +29,14 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* LOGO SECTION */}
         <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="block group">
-           {/* IMAGEN: LOGO.png */}
-           <img 
-             src="/LOGO.png" 
-             alt="Eufanía Acústica & Diseño" 
-             className="h-12 md:h-14 w-auto object-contain transition-opacity duration-300"
-             onError={(e) => {
-               // Fallback seguro: Oculta la imagen rota y muestra el texto
-               e.currentTarget.style.display = 'none';
-               e.currentTarget.nextElementSibling?.classList.remove('hidden');
-               e.currentTarget.nextElementSibling?.classList.add('flex');
-             }}
-           />
-           
-           {/* Fallback visual (Texto) si no hay imagen */}
-           <div className="hidden items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-md">
-                <Icon name="graphic_eq" className="text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold tracking-tighter leading-none text-slate-900">EUFANÍA</h1>
-                <p className="text-[10px] uppercase tracking-widest text-primary font-semibold">Acústica & Diseño</p>
-              </div>
+           {/* Contenedor Circular con Anillo */}
+           <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-[3px] border-primary/40 bg-white p-1.5 shadow-md flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
+             {/* IMAGEN: LOGO.png */}
+             <img 
+               src="/LOGO.png" 
+               alt="Eufanía Acústica & Diseño" 
+               className="w-full h-full object-contain"
+             />
            </div>
         </a>
 

@@ -95,21 +95,31 @@ function App() {
         
         {/* Instagram/Social Proof section */}
         <section className="container mx-auto px-6 mb-24">
-            <div className="bg-primary/5 rounded-6xl p-12 md:p-20 flex flex-col md:flex-row items-center justify-center gap-12 text-center md:text-left">
+            <div className="bg-primary/5 rounded-6xl p-12 md:p-20 flex flex-col md:flex-row items-center justify-center gap-16 text-center md:text-left">
+                
                 {/* 
-                   IMAGEN: CELULAR.png
+                   IMAGEN: CELULAR.png con Marco de Teléfono CSS
                 */}
-                <div className="relative w-64 md:w-72 shrink-0">
-                    <img 
-                        src="/CELULAR.png" 
-                        alt="Nuestro Instagram en Celular" 
-                        className="w-full h-auto drop-shadow-2xl rounded-[2rem] hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                             // Fallback: Si no hay imagen, ocultamos el contenedor de la imagen para que solo se vea el texto
-                             // o mostramos una imagen de ejemplo.
-                             e.currentTarget.style.opacity = "0.5"; // Reduce opacidad si falla
-                        }}
-                    />
+                <div className="relative shrink-0 select-none pointer-events-none">
+                    {/* Marco del teléfono */}
+                    <div className="relative border-slate-900 bg-slate-900 border-[12px] rounded-[2.5rem] h-auto w-64 md:w-72 shadow-2xl overflow-hidden">
+                        {/* Notch superior */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-6 bg-slate-900 rounded-b-xl z-20"></div>
+                        
+                        {/* Botones laterales simulados */}
+                        <div className="absolute top-20 -left-[15px] w-[3px] h-10 bg-slate-800 rounded-l-lg"></div>
+                        <div className="absolute top-36 -left-[15px] w-[3px] h-16 bg-slate-800 rounded-l-lg"></div>
+                        <div className="absolute top-28 -right-[15px] w-[3px] h-20 bg-slate-800 rounded-r-lg"></div>
+
+                        {/* Contenedor de la imagen */}
+                        <div className="relative w-full h-full bg-white rounded-[2rem] overflow-hidden aspect-[9/19]">
+                             <img 
+                                src="/CELULAR.png" 
+                                alt="Nuestro Instagram en Celular" 
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
                 </div>
                 
                 <div className="space-y-6">
