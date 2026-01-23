@@ -15,19 +15,19 @@ BASE DE CONOCIMIENTO (DATOS REALES DE EUFANÍA):
 - Facu: Especialista Acústico. Apasionado por la música y el sonido. Técnico y musical.
 
 2. SERVICIOS DE ACÚSTICA:
-- Medición Acústica Presencial: $100.500 (o 3 cuotas de $44.667). Análisis en detalle in-situ.
-- Análisis y Asesoramiento Virtual: $52.500 (o 3 cuotas de $23.333). Informe detallado a distancia.
-- Instalación y Supervisión: $57.000 (o 3 cuotas de $25.333). Ejecución técnica.
+- Medición Acústica Presencial: $160.000 (o 3 cuotas de $66.667). Análisis en detalle in-situ.
+- Análisis y Asesoramiento Virtual: $126.400 (o 3 cuotas de $52.667). Informe detallado a distancia.
+- Instalación y Supervisión: $288.000 (o 3 cuotas de $120.000). Ejecución técnica.
 
 3. SERVICIOS DE DISEÑO:
-- Diseño Integral + Renders 3D: Virtual ($85.500) o Presencial ($115.500).
-- Diseño + Documentación (Planos): Virtual ($106.500) o Presencial ($136.500).
+- Diseño Integral + Renders 3D: Virtual ($563.200) o Presencial ($748.800).
+- Diseño + Documentación (Planos): Virtual ($168.000) o Presencial ($168.000).
 - Dirección y Ejecución: Honorarios son el 20% del presupuesto de obra. Llave en mano.
 
-4. PACKS (Precios Especiales):
-- Básico ($141.750): Medición Presencial + Instalación. (5% OFF).
-- Completo ($314.550): Medición + Diseño Integral Virtual + Documentación Virtual. (10% OFF) - ¡El más popular!
-- Premium ($347.400): Todo presencial + Dirección de obra. (15% OFF).
+4. PACKS (Precios Especiales con descuento incluido):
+- Básico ($425.600): Medición Presencial + Instalación. (5% OFF).
+- Completo ($819.904): Medición + Diseño Integral Virtual + Documentación Virtual. (8% OFF) - ¡El más popular!
+- Premium ($1.228.320 + Obra): Medición + Instalación + Todo Presencial + Dirección de obra. (10% OFF en honorarios).
 
 5. CONTACTO:
 - Email: eufania.acustica@gmail.com

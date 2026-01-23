@@ -2,29 +2,34 @@ import React from 'react';
 import { Icon } from './Icon';
 import { PricingPack } from '../types';
 
+// Precios Actualizados según Tablas de Excel:
+// Pack Básico (Acústica): Medición + Instalación = $425.600 (5% OFF)
+// Pack Completo (Acústica + Diseño Virtual): Medición + Diseño 1 + Diseño 2 = $819.904 (8% OFF)
+// Pack Premium (Todo Presencial): Medición + Instalación + Diseño 1 + Diseño 2 = $1.228.320 (10% OFF) + Ejecución
+
 const packs: PricingPack[] = [
   {
     title: "Básico",
     items: ["Medición Acústica Presencial", "Instalación y Supervisión"],
-    price: "$141.750",
-    installments: "3 cuotas de $63.000",
+    price: "$425.600",
+    installments: "3 cuotas de $177.333",
     discount: "5% OFF",
     isPopular: false
   },
   {
     title: "Completo",
     items: ["Medición Acústica Presencial", "Diseño Integral + Renders (Virtual)", "Diseño + Documentación (Virtual)"],
-    price: "$314.550",
-    installments: "3 cuotas de $117.000",
-    discount: "10% OFF",
+    price: "$819.904",
+    installments: "3 cuotas de $341.627",
+    discount: "8% OFF",
     isPopular: true
   },
   {
     title: "Premium",
-    items: ["Medición Acústica Presencial", "Diseño Integral + Renders (Presencial)", "Diseño + Documentación (Presencial)", "Dirección y Ejecución de Obra"],
-    price: "$347.400",
-    installments: "3 cuotas de $141.000",
-    discount: "15% OFF",
+    items: ["Medición Acústica Presencial", "Instalación y Supervisión", "Diseño Integral (Presencial)", "Documentación (Presencial)", "Dirección y Ejecución de Obra"],
+    price: "$1.228.320 + Obra",
+    installments: "3 cuotas de $511.800",
+    discount: "10% OFF",
     isPopular: false
   }
 ];

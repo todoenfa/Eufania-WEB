@@ -16,22 +16,22 @@ const acousticServices: ServiceItem[] = [
     icon: 'settings_voice',
     title: 'Medición Acústica Presencial',
     description: 'Analizamos tu espacio en detalle para ofrecerte sugerencias personalizadas de mejora.',
-    price: '$100.500',
-    installments: 'o 3 CUOTAS de $44.667'
+    price: '$160.000',
+    installments: 'o 3 CUOTAS de $66.667'
   },
   {
     icon: 'laptop_mac',
     title: 'Análisis y Asesoramiento Virtual',
     description: 'Análisis acústico a distancia con informe detallado y recomendaciones técnicas.',
-    price: '$52.500',
-    installments: 'o 3 CUOTAS de $23.333'
+    price: '$126.400',
+    installments: 'o 3 CUOTAS de $52.667'
   },
   {
     icon: 'construction',
     title: 'Instalación y Supervisión',
     description: 'Nos encargamos de todo para que la acústica de tu espacio funcione a la perfección.',
-    price: '$57.000',
-    installments: 'o 3 CUOTAS de $25.333'
+    price: '$288.000',
+    installments: 'o 3 CUOTAS de $120.000'
   }
 ];
 
@@ -43,8 +43,8 @@ const designServices: ServiceItem[] = [
     price: '',
     installments: '',
     isVirtual: true,
-    virtualPrice: '$85.500',
-    presencialPrice: '$115.500'
+    virtualPrice: '$563.200',
+    presencialPrice: '$748.800'
   },
   {
     icon: 'assignment',
@@ -53,8 +53,8 @@ const designServices: ServiceItem[] = [
     price: '',
     installments: '',
     isVirtual: true,
-    virtualPrice: '$106.500',
-    presencialPrice: '$136.500'
+    virtualPrice: '$168.000',
+    presencialPrice: '$168.000'
   },
   {
     icon: 'home_repair_service',
