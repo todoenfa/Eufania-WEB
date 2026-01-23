@@ -1,9 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 
-// Initialize Gemini Client
-// In a real production app, ensure strict backend proxying for keys.
-// For this demo, we assume the environment variable is injected safely.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Initialization moved inside the function to prevent app crash on load
+// if the environment variable is missing.
 
 const SYSTEM_INSTRUCTION = `
 Rol: Eres 'Aco', el asistente virtual experto de "Eufanía - Acústica & Diseño".
@@ -48,16 +46,21 @@ REGLAS DE RESPUESTA:
 `;
 
 export const sendMessageToGemini = async (history: {role: string, parts: {text: string}[]}[], message: string) => {
+  // Check API Key at runtime, inside the function
   if (!process.env.API_KEY) {
-    return "Error: API Key no configurada. Por favor contacta al administrador.";
+    console.error("API Key missing");
+    return "Error: Chat no disponible por el momento (Falta configuración API Key).";
   }
 
   try {
+    // Lazy initialization
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    
     const chat = ai.chats.create({
       model: 'gemini-3-flash-preview',
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.7, // Balance creativity and accuracy
+        temperature: 0.7,
       },
       history: history,
     });
