@@ -20,21 +20,34 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ item }) => {
       
       <div className="mt-auto space-y-4">
         {item.isVirtual || item.isPercentage ? (
-          <div className="grid grid-cols-2 gap-4 mb-2">
+          <div className="flex flex-col gap-4 mb-2">
             {item.isPercentage ? (
-               <div className="col-span-2">
+               <div className="w-full">
                   <p className="text-[10px] uppercase font-bold text-slate-400">HONORARIOS DESDE</p>
                   <p className="text-2xl font-bold text-primary">{item.price}</p>
                </div>
             ) : (
                 <>
-                <div>
-                    <p className="text-[10px] uppercase font-bold text-slate-400">Virtual desde</p>
-                    <p className="text-lg font-bold text-slate-900 dark:text-slate-200">{item.virtualPrice}</p>
+                {/* Opción Virtual */}
+                <div className="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl">
+                    <p className="text-[10px] uppercase font-bold text-slate-400 mb-1">Virtual</p>
+                    <div className="flex flex-col">
+                        <p className="text-xl font-bold text-slate-900 dark:text-slate-200">{item.virtualPrice}</p>
+                        {item.virtualInstallments && (
+                            <p className="text-xs text-slate-500 font-medium">{item.virtualInstallments}</p>
+                        )}
+                    </div>
                 </div>
-                <div>
-                    <p className="text-[10px] uppercase font-bold text-slate-400">Presencial desde</p>
-                    <p className="text-lg font-bold text-primary">{item.presencialPrice}</p>
+                
+                {/* Opción Presencial */}
+                <div className="bg-primary/5 p-3 rounded-xl border border-primary/10">
+                    <p className="text-[10px] uppercase font-bold text-primary mb-1">Presencial</p>
+                    <div className="flex flex-col">
+                        <p className="text-xl font-bold text-primary">{item.presencialPrice}</p>
+                        {item.presencialInstallments && (
+                            <p className="text-xs text-slate-500 font-medium">{item.presencialInstallments}</p>
+                        )}
+                    </div>
                 </div>
                 </>
             )}

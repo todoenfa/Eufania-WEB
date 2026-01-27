@@ -6,7 +6,9 @@ export interface ServiceItem {
   installments: string;
   isVirtual?: boolean;
   virtualPrice?: string;
+  virtualInstallments?: string;
   presencialPrice?: string;
+  presencialInstallments?: string;
   isPercentage?: boolean;
   link?: string;
 }

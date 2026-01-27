@@ -12,7 +12,7 @@ const packs: PricingPack[] = [
     title: "Básico",
     items: ["Medición Acústica Presencial", "Instalación y Supervisión"],
     price: "$425.600",
-    installments: "3 cuotas de $177.333",
+    installments: "ó 3 cuotas de $177.333",
     discount: "5% OFF",
     isPopular: false,
     link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Basico.%20Me%20podrian%20dar%20mas%20info?"
@@ -21,7 +21,7 @@ const packs: PricingPack[] = [
     title: "Completo",
     items: ["Medición Acústica Presencial", "Diseño Integral + Renders (Virtual)", "Diseño + Documentación (Virtual)"],
     price: "$819.904",
-    installments: "3 cuotas de $341.627",
+    installments: "ó 3 cuotas de $341.627",
     discount: "8% OFF",
     isPopular: true,
     link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Completo.%20Me%20podrian%20dar%20mas%20info?"
@@ -30,7 +30,7 @@ const packs: PricingPack[] = [
     title: "Premium",
     items: ["Medición Acústica Presencial", "Instalación y Supervisión", "Diseño Integral (Presencial)", "Documentación (Presencial)", "Dirección y Ejecución de Obra"],
     price: "$1.228.320 + Obra",
-    installments: "3 cuotas de $511.800",
+    installments: "ó 3 cuotas de $511.800",
     discount: "10% OFF",
     isPopular: false,
     link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Premium.%20Me%20podrian%20dar%20mas%20info?"

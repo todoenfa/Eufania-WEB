@@ -4,37 +4,50 @@ import { Icon } from './Icon';
 export const Footer: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('submitting');
 
     const myForm = e.currentTarget;
     const formData = new FormData(myForm);
-    
-    // Convertir FormData a URLSearchParams para asegurar compatibilidad total
-    const params = new URLSearchParams();
-    for (const [key, value] of formData.entries()) {
-        params.append(key, value as string);
-    }
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
+    const message = formData.get('message') as string;
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: params.toString(),
-    })
-      .then((response) => {
-        if (!response.ok) {
-           throw new Error('Network response was not ok');
+    // Construcción de datos para Formspree
+    const data = {
+        name: name,
+        phone: phone,
+        email: email,
+        message: message,
+        _subject: `Consulta via WEB de ${name}`, // Asunto dinámico solicitado
+        _replyto: email // Permite responder directamente al cliente desde Gmail
+    };
+
+    try {
+        const response = await fetch("https://formspree.io/f/xwvoadaa", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        });
+
+        if (response.ok) {
+            setFormState('success');
+            myForm.reset();
+            // Resetear estado después de 3 segundos
+            setTimeout(() => setFormState('idle'), 3000);
+        } else {
+            console.error("Formspree error:", response.statusText);
+            setFormState('error');
         }
-        setFormState('success');
-        myForm.reset();
-        // Resetear estado después de 3 segundos
-        setTimeout(() => setFormState('idle'), 3000);
-      })
-      .catch((error) => {
+    } catch (error) {
         console.error("Error submitting form:", error);
         setFormState('error');
-      });
+    }
   };
 
   return (
@@ -76,27 +89,26 @@ export const Footer: React.FC = () => {
               <h4 className="text-2xl font-bold mb-6">Envianos un mensaje</h4>
               
               <form 
-                name="contact" 
-                method="post" 
-                data-netlify="true" 
-                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit} 
                 className="space-y-4"
               >
-                {/* Netlify Hidden Fields */}
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden" style={{ display: 'none' }}>
-                  <label>No llenar si eres humano: <input name="bot-field" /></label>
-                </p>
-
                 <input 
                     type="text" 
                     name="name"
-                    placeholder="Nombre" 
+                    placeholder="Nombre y Apellido" 
                     required
                     autoComplete="name"
                     className="w-full bg-white/20 border-none rounded-2xl p-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white focus:outline-none transition-all"
                 />
+                
+                <input 
+                    type="tel" 
+                    name="phone"
+                    placeholder="Teléfono / Celular" 
+                    autoComplete="tel"
+                    className="w-full bg-white/20 border-none rounded-2xl p-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white focus:outline-none transition-all"
+                />
+
                 <input 
                     type="email" 
                     name="email"

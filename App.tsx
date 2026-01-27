@@ -17,7 +17,7 @@ const acousticServices: ServiceItem[] = [
     title: 'Medición Acústica Presencial',
     description: 'Analizamos tu espacio en detalle para ofrecerte sugerencias personalizadas de mejora.',
     price: '$160.000',
-    installments: 'o 3 CUOTAS de $66.667',
+    installments: 'ó 3 cuotas de $66.667',
     link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Medicion%20Acustica%20Presencial.%20Me%20podrian%20dar%20mas%20info?'
   },
   {
@@ -25,7 +25,7 @@ const acousticServices: ServiceItem[] = [
     title: 'Análisis y Asesoramiento Virtual',
     description: 'Análisis acústico a distancia con informe detallado y recomendaciones técnicas.',
     price: '$126.400',
-    installments: 'o 3 CUOTAS de $52.667',
+    installments: 'ó 3 cuotas de $52.667',
     link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Analisis%20y%20Asesoramiento%20Virtual.%20Me%20podrian%20dar%20mas%20info?'
   },
   {
@@ -33,7 +33,7 @@ const acousticServices: ServiceItem[] = [
     title: 'Instalación y Supervisión',
     description: 'Nos encargamos de todo para que la acústica de tu espacio funcione a la perfección.',
     price: '$288.000',
-    installments: 'o 3 CUOTAS de $120.000',
+    installments: 'ó 3 cuotas de $120.000',
     link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Instalacion%20y%20Supervision.%20Me%20podrian%20dar%20mas%20info?'
   }
 ];
@@ -46,8 +46,11 @@ const designServices: ServiceItem[] = [
     price: '',
     installments: '',
     isVirtual: true,
+    // Valores de Planilla Actualizados (Columna I y H)
     virtualPrice: '$563.200',
+    virtualInstallments: 'ó 3 cuotas de $234.667',
     presencialPrice: '$748.800',
+    presencialInstallments: 'ó 3 cuotas de $312.000',
     link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Diseno%20Integral%20y%20Renders%203D.%20Me%20podrian%20dar%20mas%20info?'
   },
   {
@@ -57,8 +60,11 @@ const designServices: ServiceItem[] = [
     price: '',
     installments: '',
     isVirtual: true,
+    // Valores de Planilla Actualizados (Columna I y H)
     virtualPrice: '$168.000',
+    virtualInstallments: 'ó 3 cuotas de $70.000',
     presencialPrice: '$168.000',
+    presencialInstallments: 'ó 3 cuotas de $70.000',
     link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Diseno%20y%20Documentacion.%20Me%20podrian%20dar%20mas%20info?'
   },
   {
