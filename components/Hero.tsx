@@ -1,9 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { Icon } from './Icon';
 
 export const Hero: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -11,43 +9,6 @@ export const Hero: React.FC = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
-
-  // Efecto Boomerang (Ida y Vuelta)
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const checkTime = () => {
-      if (!video.duration) {
-         requestAnimationFrame(checkTime);
-         return;
-      }
-
-      // Margen de seguridad (0.2s) para evitar que se detenga en los extremos
-      const endThreshold = video.duration - 0.2;
-      const startThreshold = 0.2;
-
-      // Si está yendo hacia adelante y llega al final
-      if (video.playbackRate > 0 && video.currentTime >= endThreshold) {
-        video.playbackRate = -1; // Reversa
-      }
-      
-      // Si está yendo hacia atrás y llega al inicio
-      if (video.playbackRate < 0 && video.currentTime <= startThreshold) {
-        video.playbackRate = 1; // Adelante
-      }
-
-      requestAnimationFrame(checkTime);
-    };
-
-    // Iniciar el loop de chequeo
-    const animationFrame = requestAnimationFrame(checkTime);
-
-    // Asegurar que inicie reproducción
-    video.play().catch(e => console.log("Autoplay prevent: ", e));
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, []);
 
   return (
     <section className="container mx-auto px-6 py-8 md:py-12 scroll-mt-32" id="inicio">
@@ -82,23 +43,19 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Video / Visuals */}
+        {/* Visuals - Image instead of Video */}
         <div className="md:w-1/2 relative w-full">
           {/* Contenedor con rotación y estilos */}
           <div className="aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl md:rotate-2 relative group bg-slate-900 border border-slate-100 dark:border-slate-800">
             
-            {/* Video Element */}
-            <video
-              ref={videoRef}
-              src="/VIDEO_HERO.mp4" 
-              className="w-full h-full object-cover scale-105" // scale-105 evita bordes blancos al rotar
-              muted
-              playsInline
-              autoPlay
-              loop={false} // El loop lo manejamos manualmente con JS para el efecto boomerang
+            {/* Static Image Element */}
+            <img
+              src="/INICIO.png" 
+              alt="Estudio Eufanía"
+              className="w-full h-full object-cover animate-slow-pan"
             />
             
-            {/* Overlay sutil para mejorar contraste si el video es muy claro */}
+            {/* Overlay sutil para mejorar contraste */}
             <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
           </div>
           
