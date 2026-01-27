@@ -11,7 +11,6 @@ export const AboutUs: React.FC = () => {
         <div className="text-center space-y-6">
           <div className="relative inline-block group">
             <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-primary/20 transition-all duration-500 group-hover:border-primary/50 bg-slate-200">
-              {/* IMAGEN: EUGE.png */}
               <img 
                 src="/EUGE.png" 
                 alt="Euge - Diseñadora de Interiores" 
@@ -35,7 +34,6 @@ export const AboutUs: React.FC = () => {
         <div className="text-center space-y-6">
           <div className="relative inline-block group">
             <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-primary/20 transition-all duration-500 group-hover:border-primary/50 bg-slate-200">
-               {/* IMAGEN: FACU.png */}
               <img 
                 src="/FACU.png" 
                 alt="Facu - Especialista Acústico" 

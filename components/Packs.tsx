@@ -14,7 +14,8 @@ const packs: PricingPack[] = [
     price: "$425.600",
     installments: "3 cuotas de $177.333",
     discount: "5% OFF",
-    isPopular: false
+    isPopular: false,
+    link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Basico.%20Me%20podrian%20dar%20mas%20info?"
   },
   {
     title: "Completo",
@@ -22,7 +23,8 @@ const packs: PricingPack[] = [
     price: "$819.904",
     installments: "3 cuotas de $341.627",
     discount: "8% OFF",
-    isPopular: true
+    isPopular: true,
+    link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Completo.%20Me%20podrian%20dar%20mas%20info?"
   },
   {
     title: "Premium",
@@ -30,7 +32,8 @@ const packs: PricingPack[] = [
     price: "$1.228.320 + Obra",
     installments: "3 cuotas de $511.800",
     discount: "10% OFF",
-    isPopular: false
+    isPopular: false,
+    link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Premium.%20Me%20podrian%20dar%20mas%20info?"
   }
 ];
 
@@ -83,17 +86,30 @@ export const Packs: React.FC = () => {
                 <div className="text-3xl font-bold mb-1">{pack.price}</div>
                 <div className={`text-sm mb-4 italic ${pack.isPopular ? 'opacity-80' : 'text-slate-400'}`}>{pack.installments}</div>
                 
-                <div className={`inline-block px-4 py-1 rounded-lg font-bold mb-8 text-sm ${
-                    pack.isPopular ? 'bg-white text-primary' : 'bg-green-100 text-green-700'
-                }`}>
-                    {pack.discount}
+                <div className="relative group inline-block mb-8">
+                    <div className={`px-4 py-1 rounded-lg font-bold text-sm cursor-help ${
+                        pack.isPopular ? 'bg-white text-primary' : 'bg-green-100 text-green-700'
+                    }`}>
+                        {pack.discount}
+                    </div>
+                    {/* Tooltip */}
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-48 p-3 bg-slate-800 text-white text-xs font-medium rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 text-center leading-tight pointer-events-none transform origin-bottom scale-90 group-hover:scale-100">
+                        Descuento aplicado sobre la sumatoria de los servicios individuales.
+                        {/* Arrow */}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-slate-800"></div>
+                    </div>
                 </div>
 
-                <button className={`w-full py-4 rounded-2xl font-bold transition-transform active:scale-95 shadow-lg ${
+                <a 
+                  href={pack.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block w-full py-4 rounded-2xl font-bold transition-transform active:scale-95 shadow-lg ${
                     pack.isPopular ? 'bg-white text-primary' : 'bg-primary text-white hover:bg-primary-dark'
-                }`}>
+                  }`}
+                >
                     QUIERO! &gt;
-                </button>
+                </a>
               </div>
             </div>
           ))}

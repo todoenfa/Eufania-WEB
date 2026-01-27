@@ -79,9 +79,13 @@
 </script>
 </head>
   <body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-300">
-    <!-- Hidden Form for Netlify Detection -->
-    <!-- Important: Fields must match the React component exactly -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <!-- 
+      Netlify Forms Detection 
+      Este formulario oculto es CRÍTICO para que Netlify detecte los campos durante el build.
+      Los atributos name deben coincidir exactamente con los del componente React.
+    -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
@@ -90,7 +94,6 @@
 
     <div id="root"></div>
     
-    <!-- CRITICAL: This line connects your code to the HTML -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>

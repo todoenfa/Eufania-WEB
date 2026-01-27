@@ -6,7 +6,7 @@ import { ChatMessage } from '../types';
 export const AIChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { id: '1', role: 'model', text: '¡Hola! Soy Aco, tu asistente de acústica. ¿En qué puedo ayudarte hoy?' }
+    { id: '1', role: 'model', text: '¡Hola! Soy Eufa, tu asistente de acústica y diseño. ¿En qué puedo ayudarte hoy?' }
   ]);
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);

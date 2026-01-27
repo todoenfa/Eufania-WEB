@@ -30,9 +30,14 @@ export const FreeConsultation: React.FC = () => {
             </div>
           </div>
 
-          <button className="bg-primary text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover:shadow-2xl transition-all flex items-center gap-2 mx-auto">
+          <a 
+            href="https://calendly.com/eufania-acustica/citaconeufania?month=2026-02&date=2026-02-24"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover:shadow-2xl transition-all flex items-center gap-2 mx-auto w-fit"
+          >
             AGENDAR AHORA <Icon name="calendar_today" />
-          </button>
+          </a>
         </div>
       </div>
     </section>

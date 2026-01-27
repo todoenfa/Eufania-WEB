@@ -29,15 +29,11 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* LOGO SECTION */}
         <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="block group">
-           {/* Contenedor Circular con Anillo */}
-           <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-[3px] border-primary/40 bg-white p-1.5 shadow-md flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
-             {/* IMAGEN: LOGO.png */}
-             <img 
-               src="/LOGO.png" 
-               alt="Eufanía Acústica & Diseño" 
-               className="w-full h-full object-contain"
-             />
-           </div>
+           <img 
+             src="/LOGO.png" 
+             alt="Eufanía" 
+             className="w-14 h-14 md:w-16 md:h-16 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+           />
         </a>
 
         {/* Desktop Nav */}

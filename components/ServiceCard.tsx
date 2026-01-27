@@ -46,9 +46,14 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ item }) => {
           </div>
         )}
 
-        <button className="w-full py-4 border-2 border-primary text-primary dark:text-primary font-bold rounded-2xl hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+        <a 
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full py-4 border-2 border-primary text-primary dark:text-primary font-bold rounded-2xl hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2"
+        >
            QUIERO! <Icon name="chevron_right" />
-        </button>
+        </a>
       </div>
     </div>
   );

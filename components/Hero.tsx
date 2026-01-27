@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Icon } from './Icon';
 
 export const Hero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -10,6 +12,43 @@ export const Hero: React.FC = () => {
     }
   };
 
+  // Efecto Boomerang (Ida y Vuelta)
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const checkTime = () => {
+      if (!video.duration) {
+         requestAnimationFrame(checkTime);
+         return;
+      }
+
+      // Margen de seguridad (0.2s) para evitar que se detenga en los extremos
+      const endThreshold = video.duration - 0.2;
+      const startThreshold = 0.2;
+
+      // Si está yendo hacia adelante y llega al final
+      if (video.playbackRate > 0 && video.currentTime >= endThreshold) {
+        video.playbackRate = -1; // Reversa
+      }
+      
+      // Si está yendo hacia atrás y llega al inicio
+      if (video.playbackRate < 0 && video.currentTime <= startThreshold) {
+        video.playbackRate = 1; // Adelante
+      }
+
+      requestAnimationFrame(checkTime);
+    };
+
+    // Iniciar el loop de chequeo
+    const animationFrame = requestAnimationFrame(checkTime);
+
+    // Asegurar que inicie reproducción
+    video.play().catch(e => console.log("Autoplay prevent: ", e));
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
+
   return (
     <section className="container mx-auto px-6 py-8 md:py-12 scroll-mt-32" id="inicio">
       <div className="flex flex-col md:flex-row items-center gap-12 bg-gradient-to-br from-primary/10 to-transparent p-8 md:p-12 rounded-[2rem] relative overflow-hidden">
@@ -17,13 +56,13 @@ export const Hero: React.FC = () => {
         {/* Content */}
         <div className="md:w-1/2 space-y-6 relative z-10">
           <span className="inline-block bg-primary/20 text-primary-dark dark:text-primary px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-2">
-            Bienvenidx a Eufanía
+            BIENVENID@S A EUFANÍA
           </span>
           <h2 className="text-5xl md:text-7xl font-bold leading-[1.1] text-slate-900 dark:text-white">
             Donde el diseño y la acústica <span className="text-primary italic">se unen.</span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed">
-            Optimizamos la estética y el sonido de tus espacios: estudios, salas de ensayo, home studios y más.
+            Optimizamos la funcionalidad y el sonido de tu espacio: control room, sala de ensayo, home studio, oficinas y más.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
             <a 
@@ -43,20 +82,28 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Image / Visuals */}
+        {/* Video / Visuals */}
         <div className="md:w-1/2 relative w-full">
-          <div className="aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl md:rotate-2 relative group bg-slate-200">
-             {/* IMAGEN: INICIO.png */}
-            <img 
-              src="/INICIO.png" 
-              alt="Estudio de grabación profesional - Imagen Inicio" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          {/* Contenedor con rotación y estilos */}
+          <div className="aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl md:rotate-2 relative group bg-slate-900 border border-slate-100 dark:border-slate-800">
+            
+            {/* Video Element */}
+            <video
+              ref={videoRef}
+              src="/VIDEO_HERO.mp4" 
+              className="w-full h-full object-cover scale-105" // scale-105 evita bordes blancos al rotar
+              muted
+              playsInline
+              autoPlay
+              loop={false} // El loop lo manejamos manualmente con JS para el efecto boomerang
             />
-            <div className="absolute inset-0 bg-black/10"></div>
+            
+            {/* Overlay sutil para mejorar contraste si el video es muy claro */}
+            <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
           </div>
           
           {/* Floating Badge */}
-          <div className="absolute -bottom-6 -left-2 md:-left-6 bg-white dark:bg-slate-800 p-4 md:p-6 rounded-2xl shadow-xl flex items-center gap-4 -rotate-2 animate-bounce-slow border border-slate-100 dark:border-slate-700">
+          <div className="absolute -bottom-6 -left-2 md:-left-6 bg-white dark:bg-slate-800 p-4 md:p-6 rounded-2xl shadow-xl flex items-center gap-4 -rotate-2 animate-bounce-slow border border-slate-100 dark:border-slate-700 z-20">
             <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
               <Icon name="bolt" />
             </div>

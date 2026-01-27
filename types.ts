@@ -8,6 +8,7 @@ export interface ServiceItem {
   virtualPrice?: string;
   presencialPrice?: string;
   isPercentage?: boolean;
+  link?: string;
 }
 
 export interface PricingPack {
@@ -18,6 +19,7 @@ export interface PricingPack {
   discount: string;
   isPopular?: boolean;
   color?: string;
+  link?: string;
 }
 
 export interface ChatMessage {
