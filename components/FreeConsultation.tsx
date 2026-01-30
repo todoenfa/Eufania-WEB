@@ -1,7 +1,10 @@
 import React from 'react';
 import { Icon } from './Icon';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const FreeConsultation: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="container mx-auto px-6 mb-24">
       <div className="relative overflow-hidden bg-slate-900 rounded-[2.5rem] p-12 md:p-20 text-white text-center isolate shadow-2xl">
@@ -19,14 +22,14 @@ export const FreeConsultation: React.FC = () => {
             <Icon name="videocam" className="text-3xl text-white" />
           </div>
           
-          <h3 className="text-3xl md:text-5xl font-bold">Charla Online (30 min)</h3>
+          <h3 className="text-3xl md:text-5xl font-bold">{t('consultation.title')}</h3>
           <p className="text-slate-300 text-lg">
-            Contanos sobre tu proyecto y conocé nuestras ideas sin compromiso. ¡Estamos acá para ayudarte!
+            {t('consultation.desc')}
           </p>
           
           <div className="py-4">
              <div className="inline-block px-8 py-3 bg-white text-slate-900 rounded-full font-bold text-xl shadow-lg transform -rotate-2">
-                ¡GRATIS!
+                {t('consultation.free')}
             </div>
           </div>
 
@@ -36,7 +39,7 @@ export const FreeConsultation: React.FC = () => {
             rel="noopener noreferrer"
             className="bg-primary text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover:shadow-2xl transition-all flex items-center gap-2 mx-auto w-fit"
           >
-            AGENDAR AHORA <Icon name="calendar_today" />
+            {t('consultation.cta')} <Icon name="calendar_today" />
           </a>
         </div>
       </div>

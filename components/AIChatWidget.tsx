@@ -2,12 +2,28 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Icon } from './Icon';
 import { sendMessageToGemini } from '../services/geminiService';
 import { ChatMessage } from '../types';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const AIChatWidget: React.FC = () => {
+  const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(true);
+  
+  // Initial message depends on language
+  const initialMsgES = '¡Hola! Soy Eufa, tu asistente de acústica y diseño. ¿En qué puedo ayudarte hoy?';
+  const initialMsgEN = 'Hi! I am Eufa, your acoustics and design assistant. How can I help you today?';
+
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { id: '1', role: 'model', text: '¡Hola! Soy Eufa, tu asistente de acústica y diseño. ¿En qué puedo ayudarte hoy?' }
+    { id: '1', role: 'model', text: initialMsgES }
   ]);
+  
+  // Update initial message when language changes (only if it's the only message)
+  useEffect(() => {
+      if (messages.length === 1 && messages[0].id === '1') {
+          setMessages([{ id: '1', role: 'model', text: language === 'en' ? initialMsgEN : initialMsgES }]);
+      }
+  }, [language]);
+
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -40,21 +56,80 @@ export const AIChatWidget: React.FC = () => {
       parts: [{ text: m.text }]
     }));
 
-    const responseText = await sendMessageToGemini(history, userMsg.text);
+    // Pass language to service
+    const responseText = await sendMessageToGemini(history, userMsg.text, language);
 
     const modelMsg: ChatMessage = {
       id: (Date.now() + 1).toString(),
       role: 'model',
-      text: responseText || "Hubo un error."
+      text: responseText || "Error."
     };
 
     setIsTyping(false);
     setMessages(prev => [...prev, modelMsg]);
   };
 
+  // Helper para renderizar texto con enlaces Markdown [texto](url)
+  const formatMessage = (text: string) => {
+    // Regex para detectar enlaces [texto](url)
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(text.substring(lastIndex, match.index));
+        }
+        parts.push(
+            <a 
+                key={match.index} 
+                href={match[2]} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="underline font-bold text-inherit hover:opacity-80"
+            >
+                {match[1]}
+            </a>
+        );
+        lastIndex = linkRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : text;
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
       
+      {/* Tooltip / Ventana Emergente */}
+      {showTooltip && !isOpen && (
+        <div className="pointer-events-auto mb-4 mr-2 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 relative max-w-[250px] animate-bounce-slow">
+            <button 
+                onClick={(e) => {
+                    e.stopPropagation();
+                    setShowTooltip(false);
+                }}
+                className="absolute top-1 right-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1"
+            >
+                <Icon name="close" className="text-sm" />
+            </button>
+            <div className="flex gap-3 items-start pr-4">
+                <div className="bg-primary/10 p-2 rounded-full shrink-0">
+                    <Icon name="support_agent" className="text-primary text-xl" />
+                </div>
+                <p className="text-sm font-medium text-slate-700 dark:text-slate-200 leading-tight mt-1">
+                    {language === 'es' ? 'Si tenés dudas, escribile a Eufa.' : 'Any questions? Ask Eufa.'}
+                </p>
+            </div>
+            {/* Triangulito del tooltip */}
+            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white dark:bg-slate-800 border-b border-r border-slate-200 dark:border-slate-700 transform rotate-45"></div>
+        </div>
+      )}
+
       {/* Chat Window */}
       <div className={`pointer-events-auto bg-white dark:bg-slate-900 shadow-2xl rounded-2xl w-[350px] max-w-[calc(100vw-40px)] transition-all duration-300 origin-bottom-right overflow-hidden border border-slate-200 dark:border-slate-800 ${isOpen ? 'opacity-100 scale-100 mb-4' : 'opacity-0 scale-90 h-0 mb-0'}`}>
         
@@ -78,12 +153,12 @@ export const AIChatWidget: React.FC = () => {
         <div className="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50 dark:bg-slate-950">
           {messages.map((msg) => (
             <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed ${
+              <div className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
                 msg.role === 'user' 
                   ? 'bg-primary text-white rounded-br-none' 
                   : 'bg-white dark:bg-slate-800 dark:text-slate-200 border border-slate-100 dark:border-slate-700 rounded-bl-none shadow-sm'
               }`}>
-                {msg.text}
+                {formatMessage(msg.text)}
               </div>
             </div>
           ))}
@@ -105,7 +180,7 @@ export const AIChatWidget: React.FC = () => {
                 type="text" 
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
-                placeholder="Pregunta sobre acústica..."
+                placeholder={language === 'es' ? "Pregunta sobre acústica..." : "Ask about acoustics..."}
                 className="flex-1 bg-slate-100 dark:bg-slate-800 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 dark:text-white"
             />
             <button 
@@ -120,7 +195,10 @@ export const AIChatWidget: React.FC = () => {
 
       {/* Toggle Button */}
       <button 
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+            setIsOpen(!isOpen);
+            if (!isOpen) setShowTooltip(false); // Ocultar tooltip al abrir chat
+        }}
         className="pointer-events-auto bg-primary text-white w-14 h-14 rounded-full shadow-lg shadow-primary/30 hover:scale-105 transition-transform flex items-center justify-center group"
       >
         <div className={`transition-transform duration-300 ${isOpen ? 'rotate-90 scale-0 absolute' : 'scale-100'}`}>

@@ -1,3 +1,5 @@
+export type Language = 'es' | 'en';
+
 export interface ServiceItem {
   icon: string;
   title: string;
@@ -11,6 +13,7 @@ export interface ServiceItem {
   presencialInstallments?: string;
   isPercentage?: boolean;
   link?: string;
+  isUpgrade?: boolean;
 }
 
 export interface PricingPack {

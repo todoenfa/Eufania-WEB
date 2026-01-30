@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Icon } from './Icon';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const Footer: React.FC = () => {
+  const { t, language } = useLanguage();
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -13,6 +15,7 @@ export const Footer: React.FC = () => {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
     const phone = formData.get('phone') as string;
+    const preferredContact = formData.get('preferredContact') as string;
     const message = formData.get('message') as string;
 
     // Construcción de datos para Formspree
@@ -20,9 +23,10 @@ export const Footer: React.FC = () => {
         name: name,
         phone: phone,
         email: email,
+        preferred_contact: preferredContact,
         message: message,
-        _subject: `Consulta via WEB de ${name}`, // Asunto dinámico solicitado
-        _replyto: email // Permite responder directamente al cliente desde Gmail
+        _subject: `Consulta via WEB (${language}) de ${name}`,
+        _replyto: email
     };
 
     try {
@@ -38,7 +42,6 @@ export const Footer: React.FC = () => {
         if (response.ok) {
             setFormState('success');
             myForm.reset();
-            // Resetear estado después de 3 segundos
             setTimeout(() => setFormState('idle'), 3000);
         } else {
             console.error("Formspree error:", response.statusText);
@@ -58,8 +61,8 @@ export const Footer: React.FC = () => {
           {/* Contact Info */}
           <div className="max-w-md space-y-8">
             <div>
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">ponete en contacto</h2>
-                <p className="text-white/80 text-xl italic font-light">estamos acá para ayudarte!</p>
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">{t('footer.title')}</h2>
+                <p className="text-white/80 text-xl italic font-light">{t('footer.subtitle')}</p>
             </div>
             <div className="space-y-6">
               <a href="https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20mejorar%20la%20acustica%20de%20mi%20espacio.%20Podrian%20asesorarme?" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg md:text-xl hover:translate-x-2 transition-transform group">
@@ -86,7 +89,7 @@ export const Footer: React.FC = () => {
           {/* Contact Form */}
           <div className="w-full md:w-1/2 lg:w-5/12">
             <div className="bg-white/10 p-8 md:p-10 rounded-[2.5rem] backdrop-blur-md border border-white/20 shadow-2xl">
-              <h4 className="text-2xl font-bold mb-6">Envianos un mensaje</h4>
+              <h4 className="text-2xl font-bold mb-6">{t('footer.form.title')}</h4>
               
               <form 
                 onSubmit={handleSubmit} 
@@ -95,7 +98,7 @@ export const Footer: React.FC = () => {
                 <input 
                     type="text" 
                     name="name"
-                    placeholder="Nombre y Apellido" 
+                    placeholder={t('footer.form.name')} 
                     required
                     autoComplete="name"
                     className="w-full bg-white/20 border-none rounded-2xl p-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white focus:outline-none transition-all"
@@ -104,7 +107,7 @@ export const Footer: React.FC = () => {
                 <input 
                     type="tel" 
                     name="phone"
-                    placeholder="Teléfono / Celular" 
+                    placeholder={t('footer.form.phone')} 
                     autoComplete="tel"
                     className="w-full bg-white/20 border-none rounded-2xl p-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white focus:outline-none transition-all"
                 />
@@ -112,15 +115,33 @@ export const Footer: React.FC = () => {
                 <input 
                     type="email" 
                     name="email"
-                    placeholder="Email" 
+                    placeholder={t('footer.form.email')} 
                     required
                     autoComplete="email"
                     className="w-full bg-white/20 border-none rounded-2xl p-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white focus:outline-none transition-all"
                 />
+
+                <div className="relative">
+                   <select 
+                        name="preferredContact"
+                        required
+                        className="w-full bg-white/20 border-none rounded-2xl p-4 text-white appearance-none focus:ring-2 focus:ring-white focus:outline-none transition-all cursor-pointer"
+                        defaultValue=""
+                   >
+                        <option value="" disabled className="text-slate-500">{t('footer.form.prefer')}</option>
+                        <option value="whatsapp" className="text-slate-900">WhatsApp</option>
+                        <option value="email" className="text-slate-900">Email</option>
+                        <option value="phone" className="text-slate-900">{t('footer.contact.call')}</option>
+                   </select>
+                   <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-white">
+                        <Icon name="expand_more" />
+                   </div>
+                </div>
+
                 <textarea 
                     name="message"
                     rows={4} 
-                    placeholder="¿En qué podemos ayudarte?" 
+                    placeholder={t('footer.form.msg')} 
                     required
                     className="w-full bg-white/20 border-none rounded-2xl p-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white focus:outline-none transition-all resize-none"
                 ></textarea>
@@ -136,10 +157,10 @@ export const Footer: React.FC = () => {
                         : 'bg-white text-primary hover:bg-slate-100'
                     }`}
                 >
-                    {formState === 'idle' && 'ENVIAR'}
+                    {formState === 'idle' && t('footer.form.send')}
                     {formState === 'submitting' && <Icon name="sync" className="animate-spin" />}
-                    {formState === 'success' && <><Icon name="check" /> ENVIADO</>}
-                    {formState === 'error' && 'ERROR, REINTENTAR'}
+                    {formState === 'success' && <><Icon name="check" /> {t('footer.form.sent')}</>}
+                    {formState === 'error' && t('footer.form.error')}
                 </button>
               </form>
             </div>
@@ -154,10 +175,7 @@ export const Footer: React.FC = () => {
             </div>
             <span className="font-bold tracking-tight text-white">EUFANÍA. 2024</span>
           </div>
-          <p className="text-sm">Diseño de Interiores & Soluciones Acústicas</p>
-          <div className="flex gap-4">
-            <a href="https://www.instagram.com/eufaniaacustica/" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:scale-110 transition-all opacity-70 hover:opacity-100"><Icon name="photo_camera" /></a>
-          </div>
+          <p className="text-sm">{t('footer.bottom')}</p>
         </div>
       </div>
     </footer>
