@@ -14,7 +14,7 @@ export const AboutUs: React.FC = () => {
           <div className="relative inline-block group">
             <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-primary/20 transition-all duration-500 group-hover:border-primary/50 bg-slate-200">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop" 
+                src="/euge.png" 
                 alt="Euge" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
@@ -37,7 +37,7 @@ export const AboutUs: React.FC = () => {
           <div className="relative inline-block group">
             <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-primary/20 transition-all duration-500 group-hover:border-primary/50 bg-slate-200">
               <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1887&auto=format&fit=crop" 
+                src="/facu.png" 
                 alt="Facu" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />

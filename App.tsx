@@ -193,7 +193,7 @@ const AppContent = () => {
                             {/* Contenedor de la imagen */}
                             <div className="relative w-full h-full bg-white rounded-[2rem] overflow-hidden aspect-[9/19]">
                                  <img 
-                                    src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop" 
+                                    src="/celular.png" 
                                     alt="Instagram" 
                                     className="w-full h-full object-cover"
                                 />

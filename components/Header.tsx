@@ -37,10 +37,12 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* LOGO SECTION */}
         <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="flex items-center gap-3 group">
-           {/* Logo Circular con borde */}
-           <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform shadow-lg shadow-primary/30 border-2 border-white ring-2 ring-primary">
-             <Icon name="graphic_eq" className="text-2xl" />
-           </div>
+           {/* Logo Image */}
+           <img 
+             src="/logo.png" 
+             alt="Eufanía Logo" 
+             className="w-12 h-12 rounded-full object-cover transform group-hover:rotate-12 transition-transform shadow-lg shadow-primary/30 border-2 border-white ring-2 ring-primary"
+           />
            <div className="flex flex-col">
              <span className="font-bold text-2xl tracking-tight text-slate-800 dark:text-white group-hover:text-primary transition-colors leading-none">
                EUFANÍA
