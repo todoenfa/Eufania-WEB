@@ -14,7 +14,7 @@ export const Packs: React.FC = () => {
       installments: "ó 3 cuotas de $176.667",
       discount: "5% OFF EXTRA",
       isPopular: false,
-      link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Basico.%20Me%20podrian%20dar%20mas%20info?"
+      link: "https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Basico.%20Me%20podrian%20dar%20mas%20info?"
     },
     {
       title: "Completo",
@@ -23,7 +23,7 @@ export const Packs: React.FC = () => {
       installments: "ó 3 cuotas de $341.667",
       discount: "8% OFF EXTRA",
       isPopular: true,
-      link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Completo.%20Me%20podrian%20dar%20mas%20info?"
+      link: "https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Completo.%20Me%20podrian%20dar%20mas%20info?"
     },
     {
       title: "Premium",
@@ -32,7 +32,7 @@ export const Packs: React.FC = () => {
       installments: "ó 3 cuotas de $511.667",
       discount: "10% OFF EXTRA",
       isPopular: false,
-      link: "https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Premium.%20Me%20podrian%20dar%20mas%20info?"
+      link: "https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Premium.%20Me%20podrian%20dar%20mas%20info?"
     }
   ];
 
@@ -44,7 +44,7 @@ export const Packs: React.FC = () => {
       installments: "or 3 installments of $176.667",
       discount: "5% OFF EXTRA",
       isPopular: false,
-      link: "https://wa.me/5491165189255?text=Hi,%20I'm%20interested%20in%20the%20Basic%20Bundle.%20Could%20I%20get%20more%20info?"
+      link: "https://wa.me/5491123369909?text=Hi,%20I'm%20interested%20in%20the%20Basic%20Bundle.%20Could%20I%20get%20more%20info?"
     },
     {
       title: "Complete",
@@ -53,7 +53,7 @@ export const Packs: React.FC = () => {
       installments: "or 3 installments of $341.667",
       discount: "8% OFF EXTRA",
       isPopular: true,
-      link: "https://wa.me/5491165189255?text=Hi,%20I'm%20interested%20in%20the%20Complete%20Bundle.%20Could%20I%20get%20more%20info?"
+      link: "https://wa.me/5491123369909?text=Hi,%20I'm%20interested%20in%20the%20Complete%20Bundle.%20Could%20I%20get%20more%20info?"
     },
     {
       title: "Premium",
@@ -62,7 +62,7 @@ export const Packs: React.FC = () => {
       installments: "or 3 installments of $511.667",
       discount: "10% OFF EXTRA",
       isPopular: false,
-      link: "https://wa.me/5491165189255?text=Hi,%20I'm%20interested%20in%20the%20Premium%20Bundle.%20Could%20I%20get%20more%20info?"
+      link: "https://wa.me/5491123369909?text=Hi,%20I'm%20interested%20in%20the%20Premium%20Bundle.%20Could%20I%20get%20more%20info?"
     }
   ];
 

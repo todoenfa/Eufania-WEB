@@ -65,11 +65,11 @@ export const Footer: React.FC = () => {
                 <p className="text-white/80 text-xl italic font-light">{t('footer.subtitle')}</p>
             </div>
             <div className="space-y-6">
-              <a href="https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20mejorar%20la%20acustica%20de%20mi%20espacio.%20Podrian%20asesorarme?" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg md:text-xl hover:translate-x-2 transition-transform group">
+              <a href="https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20mejorar%20la%20acustica%20de%20mi%20espacio.%20Podrian%20asesorarme?" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg md:text-xl hover:translate-x-2 transition-transform group">
                 <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-colors">
                   <Icon name="phone" />
                 </div>
-                +54 9 11 6518 9255
+                +54 9 11 2336 9909
               </a>
               <a href="mailto:eufania.acustica@gmail.com" className="flex items-center gap-4 text-lg md:text-xl hover:translate-x-2 transition-transform group">
                 <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-colors">
@@ -168,14 +168,14 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 text-white/80">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-white text-primary rounded-full flex items-center justify-center">
-              <Icon name="graphic_eq" className="text-sm" />
+        <div className="pt-8 border-t border-white/20 relative flex flex-col md:flex-row justify-center items-center gap-4 text-white/80">
+          <div className="md:absolute md:left-0 flex items-center gap-2">
+            <div className="h-8 w-8 rounded-full overflow-hidden bg-white flex items-center justify-center">
+              <img src="/logo.png" alt="Eufanía" className="h-full w-full object-cover" />
             </div>
             <span className="font-bold tracking-tight text-white">EUFANÍA. 2024</span>
           </div>
-          <p className="text-sm">{t('footer.bottom')}</p>
+          <p className="text-sm text-center">{t('footer.bottom')}</p>
         </div>
       </div>
     </footer>

@@ -23,7 +23,7 @@ const AppContent = () => {
         description: 'Analizamos tu espacio en detalle para ofrecerte sugerencias personalizadas de mejora.',
         price: '$160.000',
         installments: 'ó 3 cuotas de $66.667',
-        link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Medicion%20Acustica%20Presencial.%20Me%20podrian%20dar%20mas%20info?'
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Medicion%20Acustica%20Presencial.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'laptop_mac',
@@ -31,7 +31,7 @@ const AppContent = () => {
         description: 'Análisis acústico a distancia con informe detallado y recomendaciones técnicas.',
         price: '$125.000',
         installments: 'ó 3 cuotas de $51.667',
-        link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Analisis%20y%20Asesoramiento%20Virtual.%20Me%20podrian%20dar%20mas%20info?'
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Analisis%20y%20Asesoramiento%20Virtual.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'construction',
@@ -40,7 +40,7 @@ const AppContent = () => {
         price: '$290.000',
         installments: 'ó 3 cuotas de $120.000',
         isUpgrade: true,
-        link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Instalacion%20y%20Supervision.%20Me%20podrian%20dar%20mas%20info?'
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Instalacion%20y%20Supervision.%20Me%20podrian%20dar%20mas%20info?'
       }
     ];
 
@@ -51,7 +51,7 @@ const AppContent = () => {
           description: 'We analyze your space in detail to offer personalized improvement suggestions.',
           price: '$160.000',
           installments: 'or 3 installments of $66.667',
-          link: 'https://wa.me/5491165189255?text=Hi,%20I\'m%20interested%20in%20In-Person%20Acoustic%20Measurement.%20More%20info?'
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20In-Person%20Acoustic%20Measurement.%20More%20info?'
         },
         {
           icon: 'laptop_mac',
@@ -59,7 +59,7 @@ const AppContent = () => {
           description: 'Remote acoustic analysis with detailed reporting and technical recommendations.',
           price: '$125.000',
           installments: 'or 3 installments of $51.667',
-          link: 'https://wa.me/5491165189255?text=Hi,%20I\'m%20interested%20in%20Virtual%20Analysis.%20More%20info?'
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Virtual%20Analysis.%20More%20info?'
         },
         {
           icon: 'construction',
@@ -68,7 +68,7 @@ const AppContent = () => {
           price: '$290.000',
           installments: 'or 3 installments of $120.000',
           isUpgrade: true,
-          link: 'https://wa.me/5491165189255?text=Hi,%20I\'m%20interested%20in%20Installation%20and%20Supervision.%20More%20info?'
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Installation%20and%20Supervision.%20More%20info?'
         }
     ];
 
@@ -84,7 +84,7 @@ const AppContent = () => {
         virtualInstallments: 'ó 3 cuotas de $235.000',
         presencialPrice: 'DESDE $750.000',
         presencialInstallments: 'ó 3 cuotas de $311.667',
-        link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Diseno%20Integral%20y%20Renders%203D.%20Me%20podrian%20dar%20mas%20info?'
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Diseno%20Integral%20y%20Renders%203D.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'assignment',
@@ -93,7 +93,7 @@ const AppContent = () => {
         price: 'DESDE $170.000',
         installments: 'ó 3 cuotas de $70.000',
         isUpgrade: true,
-        link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Documentacion%20de%20Obra.%20Me%20podrian%20dar%20mas%20info?'
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Documentacion%20de%20Obra.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'home_repair_service',
@@ -104,7 +104,7 @@ const AppContent = () => {
         isVirtual: true,
         isPercentage: true,
         isUpgrade: true,
-        link: 'https://wa.me/5491165189255?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Direccion%20y%20Ejecucion.%20Me%20podrian%20dar%20mas%20info?'
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Direccion%20y%20Ejecucion.%20Me%20podrian%20dar%20mas%20info?'
       }
     ];
 
@@ -120,7 +120,7 @@ const AppContent = () => {
           virtualInstallments: 'or 3 installments of $235.000',
           presencialPrice: 'FROM $750.000',
           presencialInstallments: 'or 3 installments of $311.667',
-          link: 'https://wa.me/5491165189255?text=Hi,%20I\'m%20interested%20in%20Integral%20Design.%20More%20info?'
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Integral%20Design.%20More%20info?'
         },
         {
           icon: 'assignment',
@@ -129,7 +129,7 @@ const AppContent = () => {
           price: 'FROM $170.000',
           installments: 'or 3 installments of $70.000',
           isUpgrade: true,
-          link: 'https://wa.me/5491165189255?text=Hi,%20I\'m%20interested%20in%20Construction%20Documentation.%20More%20info?'
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Construction%20Documentation.%20More%20info?'
         },
         {
           icon: 'home_repair_service',
@@ -140,7 +140,7 @@ const AppContent = () => {
           isVirtual: true,
           isPercentage: true,
           isUpgrade: true,
-          link: 'https://wa.me/5491165189255?text=Hi,%20I\'m%20interested%20in%20Project%20Execution.%20More%20info?'
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Project%20Execution.%20More%20info?'
         }
     ];
 

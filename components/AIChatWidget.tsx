@@ -199,7 +199,7 @@ export const AIChatWidget: React.FC = () => {
             setIsOpen(!isOpen);
             if (!isOpen) setShowTooltip(false); // Ocultar tooltip al abrir chat
         }}
-        className="pointer-events-auto bg-primary text-white w-14 h-14 rounded-full shadow-lg shadow-primary/30 hover:scale-105 transition-transform flex items-center justify-center group"
+        className="pointer-events-auto bg-primary text-white w-14 h-14 rounded-full shadow-lg shadow-primary/30 hover:scale-105 transition-transform flex items-center justify-center group border border-slate-900/20"
       >
         <div className={`transition-transform duration-300 ${isOpen ? 'rotate-90 scale-0 absolute' : 'scale-100'}`}>
              <Icon name="chat_bubble" className="text-2xl" />

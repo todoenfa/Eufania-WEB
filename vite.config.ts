@@ -12,9 +12,9 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: 'dist',
     },
-    // Reemplaza process.env.API_KEY en el código del cliente con el valor real obtenido
+    // Reemplaza process.env.GEMINI_API_KEY en el código del cliente con el valor real obtenido
     define: {
-      'process.env.API_KEY': JSON.stringify(env.API_KEY)
+      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
     }
   }
 })
