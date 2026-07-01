@@ -36,15 +36,14 @@ BASE DE CONOCIMIENTO (Servicios Detallados):
 - Proceso: Coordinamos horario -> Te preparás (pensás objetivos) -> Charla (te escuchamos).
 - Entregable: Resumen de lo conversado + ideas/sugerencias de próximos pasos.
 
-📏 **Medición Acústica + Análisis e Informe + Presupuesto | PRESENCIAL**
-- Enfoque: Tratamientos internos y aislamientos. Precisión.
-- Consiste en: Visita (medición/relevamiento, notas estado actual) -> Análisis Acústico (determinar mejoras).
+📏 **Tratamiento Acústico: Medición/Asesoramiento | PRESENCIAL y VIRTUAL**
+- Enfoque: Confort acústico y tratamientos internos.
+- Consiste en: Análisis de tu espacio en detalle para ofrecerte un mejor confort acústico.
 - Entregable: Informe detallado, dibujo esquemático para colocación técnica, presupuesto orientativo.
-- Nota: Consultar por asesoramientos a distancia.
 
-💻 **Cálculo Acústico + Análisis e Informe + Presupuesto | VIRTUAL**
-- Enfoque: Evaluación a distancia efectiva.
-- Consiste en: Revisión remota (te pedimos datos por formulario) -> Análisis de la información.
+💻 **Aislamiento Acústico: Medición | VIRTUAL**
+- Enfoque: Aislamiento sonoro.
+- Consiste en: Analizamos la estructura de tu espacio en detalle para atenuar el ingreso de ruidos externos o evitar que el sonido salga al exterior.
 - Entregable: Informe detallado con cálculos, dibujo esquemático para colocación técnica, presupuesto orientativo.
 
 🛠️ **Instalación y Supervisión Acústica**
@@ -106,15 +105,14 @@ KNOWLEDGE BASE (Detailed Services):
 - Process: Schedule coordination -> Preparation (think about goals) -> Chat (we listen to you).
 - Deliverable: Summary of conversation + ideas/suggestions for next steps.
 
-📏 **Acoustic Measurement + Analysis & Report + Budget | IN-PERSON**
-- Focus: Internal treatments and isolation. Precision.
-- Consists of: Visit (measurement/survey, current state notes) -> Acoustic Analysis (determine improvements).
+📏 **Acoustic Treatment: Measurement/Consulting | IN-PERSON & VIRTUAL**
+- Focus: Acoustic comfort and internal treatments.
+- Consists of: Detailed analysis of your space to offer better acoustic comfort.
 - Deliverable: Detailed report, schematic drawing for technical placement, indicative budget.
-- Note: Ask about remote consulting.
 
-💻 **Acoustic Calculation + Analysis & Report + Budget | VIRTUAL**
-- Focus: Effective remote evaluation.
-- Consists of: Remote review (we ask for data via form) -> Information analysis.
+💻 **Acoustic Isolation: Measurement | VIRTUAL**
+- Focus: Sound isolation.
+- Consists of: Detailed analysis of your space's structure to attenuate external noise ingress or prevent sound from escaping.
 - Deliverable: Detailed report with calculations, schematic drawing for technical placement, indicative budget.
 
 🛠️ **Acoustic Installation & Supervision**

@@ -19,26 +19,31 @@ const AppContent = () => {
     const acousticServicesES: ServiceItem[] = [
       {
         icon: 'settings_voice',
-        title: 'Medición Acústica Presencial',
-        description: 'Analizamos tu espacio en detalle para ofrecerte sugerencias personalizadas de mejora.',
-        price: '$160.000',
-        installments: 'ó 3 cuotas de $66.667',
-        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Medicion%20Acustica%20Presencial.%20Me%20podrian%20dar%20mas%20info?'
+        title: 'Tratamiento Acústico: Medición/Asesoramiento',
+        description: 'Analizamos tu espacio en detalle para ofrecerte un mejor confort acústico',
+        price: '',
+        installments: '',
+        isVirtual: true,
+        virtualPrice: '$150.000',
+        virtualInstallments: 'ó 3 cuotas de $61.667',
+        presencialPrice: '$210.000',
+        presencialInstallments: 'ó 3 cuotas de $86.667',
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Tratamiento%20Acustico.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'laptop_mac',
-        title: 'Análisis y Asesoramiento Virtual',
-        description: 'Análisis acústico a distancia con informe detallado y recomendaciones técnicas.',
-        price: '$125.000',
-        installments: 'ó 3 cuotas de $51.667',
-        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Analisis%20y%20Asesoramiento%20Virtual.%20Me%20podrian%20dar%20mas%20info?'
+        title: 'Aislamiento Acústico: Medición',
+        description: 'Analizamos la estructura de tu espacio en detalle para atenuar el ingreso de ruidos externos o evitar que el sonido salga al exterior.',
+        price: '$280.000',
+        installments: 'ó 3 cuotas de $116.667',
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Aislamiento%20Acustico.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'construction',
         title: 'Instalación y Supervisión',
         description: 'Nos encargamos de todo para que la acústica de tu espacio funcione a la perfección.',
-        price: '$290.000',
-        installments: 'ó 3 cuotas de $120.000',
+        price: 'DESDE $330.000',
+        installments: 'ó 3 cuotas de $138.333',
         isUpgrade: true,
         link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Instalacion%20y%20Supervision.%20Me%20podrian%20dar%20mas%20info?'
       }
@@ -47,26 +52,31 @@ const AppContent = () => {
     const acousticServicesEN: ServiceItem[] = [
         {
           icon: 'settings_voice',
-          title: 'In-Person Acoustic Measurement',
-          description: 'We analyze your space in detail to offer personalized improvement suggestions.',
-          price: '$160.000',
-          installments: 'or 3 installments of $66.667',
-          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20In-Person%20Acoustic%20Measurement.%20More%20info?'
+          title: 'Acoustic Treatment: Measurement/Consulting',
+          description: 'We analyze your space in detail to offer you better acoustic comfort.',
+          price: '',
+          installments: '',
+          isVirtual: true,
+          virtualPrice: '$150.000',
+          virtualInstallments: 'or 3 installments of $61.667',
+          presencialPrice: '$210.000',
+          presencialInstallments: 'or 3 installments of $86.667',
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Acoustic%20Treatment.%20More%20info?'
         },
         {
           icon: 'laptop_mac',
-          title: 'Virtual Analysis & Consulting',
-          description: 'Remote acoustic analysis with detailed reporting and technical recommendations.',
-          price: '$125.000',
-          installments: 'or 3 installments of $51.667',
-          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Virtual%20Analysis.%20More%20info?'
+          title: 'Acoustic Isolation: Measurement',
+          description: 'We analyze your space\'s structure in detail to attenuate external noise ingress or prevent sound from escaping.',
+          price: '$280.000',
+          installments: 'or 3 installments of $116.667',
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Acoustic%20Isolation.%20More%20info?'
         },
         {
           icon: 'construction',
           title: 'Installation & Supervision',
           description: 'We handle everything to ensure your space\'s acoustics work perfectly.',
-          price: '$290.000',
-          installments: 'or 3 installments of $120.000',
+          price: 'FROM $330.000',
+          installments: 'or 3 installments of $138.333',
           isUpgrade: true,
           link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Installation%20and%20Supervision.%20More%20info?'
         }
@@ -80,18 +90,18 @@ const AppContent = () => {
         price: '',
         installments: '',
         isVirtual: true,
-        virtualPrice: 'DESDE $565.000',
-        virtualInstallments: 'ó 3 cuotas de $235.000',
-        presencialPrice: 'DESDE $750.000',
-        presencialInstallments: 'ó 3 cuotas de $311.667',
+        virtualPrice: 'DESDE $680.000',
+        virtualInstallments: 'ó 3 cuotas de $283.333',
+        presencialPrice: 'DESDE $910.000',
+        presencialInstallments: 'ó 3 cuotas de $380.000',
         link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Diseno%20Integral%20y%20Renders%203D.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'assignment',
         title: 'Documentación de Obra',
         description: 'Sumamos planos, catálogo y presupuesto detallado para que sepas como lograrlo con seguridad.',
-        price: 'DESDE $170.000',
-        installments: 'ó 3 cuotas de $70.000',
+        price: 'DESDE $195.000',
+        installments: 'ó 3 cuotas de $81.667',
         isUpgrade: true,
         link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Documentacion%20de%20Obra.%20Me%20podrian%20dar%20mas%20info?'
       },
@@ -116,18 +126,18 @@ const AppContent = () => {
           price: '',
           installments: '',
           isVirtual: true,
-          virtualPrice: 'FROM $565.000',
-          virtualInstallments: 'or 3 installments of $235.000',
-          presencialPrice: 'FROM $750.000',
-          presencialInstallments: 'or 3 installments of $311.667',
+          virtualPrice: 'FROM $680.000',
+          virtualInstallments: 'or 3 installments of $283.333',
+          presencialPrice: 'FROM $910.000',
+          presencialInstallments: 'or 3 installments of $380.000',
           link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Integral%20Design.%20More%20info?'
         },
         {
           icon: 'assignment',
           title: 'Construction Documentation',
           description: 'We include plans, catalogs, and detailed budgets so you know how to achieve it safely.',
-          price: 'FROM $170.000',
-          installments: 'or 3 installments of $70.000',
+          price: 'FROM $195.000',
+          installments: 'or 3 installments of $81.667',
           isUpgrade: true,
           link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Construction%20Documentation.%20More%20info?'
         },

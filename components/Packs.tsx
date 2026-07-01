@@ -10,8 +10,8 @@ export const Packs: React.FC = () => {
     {
       title: "Básico",
       items: ["Medición Acústica Presencial", "Instalación y Supervisión"],
-      price: "$425.000",
-      installments: "ó 3 cuotas de $176.667",
+      price: "$510.000",
+      installments: "ó 3 cuotas de $213.333",
       discount: "5% OFF EXTRA",
       isPopular: false,
       link: "https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Basico.%20Me%20podrian%20dar%20mas%20info?"
@@ -19,8 +19,8 @@ export const Packs: React.FC = () => {
     {
       title: "Completo",
       items: ["Medición Acústica Presencial", "Diseño Integral + Renders (Virtual)", "Documentación de Obra"],
-      price: "DESDE $820.000",
-      installments: "ó 3 cuotas de $341.667",
+      price: "DESDE $995.000",
+      installments: "ó 3 cuotas de $415.000",
       discount: "8% OFF EXTRA",
       isPopular: true,
       link: "https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Completo.%20Me%20podrian%20dar%20mas%20info?"
@@ -28,8 +28,8 @@ export const Packs: React.FC = () => {
     {
       title: "Premium",
       items: ["Medición Acústica Presencial", "Instalación y Supervisión", "Diseño Integral (Presencial)", "Documentación de Obra", "Dirección y Ejecución de Obra"],
-      price: "DESDE $1.230.000 + Obra",
-      installments: "ó 3 cuotas de $511.667",
+      price: "DESDE $1.485.000 + Obra",
+      installments: "ó 3 cuotas de $618.333",
       discount: "10% OFF EXTRA",
       isPopular: false,
       link: "https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Premium.%20Me%20podrian%20dar%20mas%20info?"
@@ -40,8 +40,8 @@ export const Packs: React.FC = () => {
     {
       title: "Basic",
       items: ["In-Person Acoustic Measurement", "Installation & Supervision"],
-      price: "$425.000",
-      installments: "or 3 installments of $176.667",
+      price: "$510.000",
+      installments: "or 3 installments of $213.333",
       discount: "5% OFF EXTRA",
       isPopular: false,
       link: "https://wa.me/5491123369909?text=Hi,%20I'm%20interested%20in%20the%20Basic%20Bundle.%20Could%20I%20get%20more%20info?"
@@ -49,8 +49,8 @@ export const Packs: React.FC = () => {
     {
       title: "Complete",
       items: ["In-Person Acoustic Measurement", "Integral Design + Renders (Virtual)", "Construction Documentation"],
-      price: "FROM $820.000",
-      installments: "or 3 installments of $341.667",
+      price: "FROM $995.000",
+      installments: "or 3 installments of $415.000",
       discount: "8% OFF EXTRA",
       isPopular: true,
       link: "https://wa.me/5491123369909?text=Hi,%20I'm%20interested%20in%20the%20Complete%20Bundle.%20Could%20I%20get%20more%20info?"
@@ -58,8 +58,8 @@ export const Packs: React.FC = () => {
     {
       title: "Premium",
       items: ["In-Person Acoustic Measurement", "Installation & Supervision", "Integral Design (In-Person)", "Construction Documentation", "Direction & Execution"],
-      price: "FROM $1.230.000 + Works",
-      installments: "or 3 installments of $511.667",
+      price: "FROM $1.485.000 + Works",
+      installments: "or 3 installments of $618.333",
       discount: "10% OFF EXTRA",
       isPopular: false,
       link: "https://wa.me/5491123369909?text=Hi,%20I'm%20interested%20in%20the%20Premium%20Bundle.%20Could%20I%20get%20more%20info?"
@@ -159,6 +159,10 @@ export const Packs: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-12 text-center text-sm text-slate-500 dark:text-slate-400 italic font-medium">
+          {language === 'en' ? '* Prices are subject to change without prior notice.' : '* Los precios pueden modificarse sin previo aviso.'}
         </div>
       </div>
     </section>
