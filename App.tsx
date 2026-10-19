@@ -28,7 +28,18 @@ const AppContent = () => {
         virtualInstallments: 'ó 3 cuotas de $61.667',
         presencialPrice: '$210.000',
         presencialInstallments: 'ó 3 cuotas de $86.667',
+        isLinkedToNext: true,
         link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Tratamiento%20Acustico.%20Me%20podrian%20dar%20mas%20info?'
+      },
+      {
+        icon: 'construction',
+        title: 'Supervisión de la Instalación',
+        description: 'Nos encargamos de todo para que la acústica de tu espacio funcione a la perfección.',
+        price: 'DESDE $330.000',
+        installments: 'ó 3 cuotas de $138.333',
+        isUpgrade: true,
+        isLinkedFromPrev: true,
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Supervision%20de%20la%20Instalacion.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'laptop_mac',
@@ -37,15 +48,6 @@ const AppContent = () => {
         price: '$280.000',
         installments: 'ó 3 cuotas de $116.667',
         link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Aislamiento%20Acustico.%20Me%20podrian%20dar%20mas%20info?'
-      },
-      {
-        icon: 'construction',
-        title: 'Instalación y Supervisión',
-        description: 'Nos encargamos de todo para que la acústica de tu espacio funcione a la perfección.',
-        price: 'DESDE $330.000',
-        installments: 'ó 3 cuotas de $138.333',
-        isUpgrade: true,
-        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Instalacion%20y%20Supervision.%20Me%20podrian%20dar%20mas%20info?'
       }
     ];
 
@@ -61,7 +63,18 @@ const AppContent = () => {
           virtualInstallments: 'or 3 installments of $61.667',
           presencialPrice: '$210.000',
           presencialInstallments: 'or 3 installments of $86.667',
+          isLinkedToNext: true,
           link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Acoustic%20Treatment.%20More%20info?'
+        },
+        {
+          icon: 'construction',
+          title: 'Installation Supervision',
+          description: 'We handle everything to ensure your space\'s acoustics work perfectly.',
+          price: 'FROM $330.000',
+          installments: 'or 3 installments of $138.333',
+          isUpgrade: true,
+          isLinkedFromPrev: true,
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Installation%20Supervision.%20More%20info?'
         },
         {
           icon: 'laptop_mac',
@@ -70,15 +83,6 @@ const AppContent = () => {
           price: '$280.000',
           installments: 'or 3 installments of $116.667',
           link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Acoustic%20Isolation.%20More%20info?'
-        },
-        {
-          icon: 'construction',
-          title: 'Installation & Supervision',
-          description: 'We handle everything to ensure your space\'s acoustics work perfectly.',
-          price: 'FROM $330.000',
-          installments: 'or 3 installments of $138.333',
-          isUpgrade: true,
-          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Installation%20and%20Supervision.%20More%20info?'
         }
     ];
 
@@ -94,6 +98,8 @@ const AppContent = () => {
         virtualInstallments: 'ó 3 cuotas de $283.333',
         presencialPrice: 'DESDE $910.000',
         presencialInstallments: 'ó 3 cuotas de $380.000',
+        isLinkedToNext: true,
+        stepNumber: 1,
         link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Diseno%20Integral%20y%20Renders%203D.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
@@ -103,18 +109,23 @@ const AppContent = () => {
         price: 'DESDE $195.000',
         installments: 'ó 3 cuotas de $81.667',
         isUpgrade: true,
+        isLinkedFromPrev: true,
+        isLinkedToNext: true,
+        stepNumber: 2,
         link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Documentacion%20de%20Obra.%20Me%20podrian%20dar%20mas%20info?'
       },
       {
         icon: 'home_repair_service',
-        title: 'Dirección y Ejecución',
+        title: 'Dirección de Obra',
         description: 'Nos encargamos de todo de punta a punta. Diseño llave en mano.',
         price: '20% del presupuesto',
         installments: '',
         isVirtual: true,
         isPercentage: true,
         isUpgrade: true,
-        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Direccion%20y%20Ejecucion.%20Me%20podrian%20dar%20mas%20info?'
+        isLinkedFromPrev: true,
+        stepNumber: 3,
+        link: 'https://wa.me/5491123369909?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Direccion%20de%20Obra.%20Me%20podrian%20dar%20mas%20info?'
       }
     ];
 
@@ -130,6 +141,8 @@ const AppContent = () => {
           virtualInstallments: 'or 3 installments of $283.333',
           presencialPrice: 'FROM $910.000',
           presencialInstallments: 'or 3 installments of $380.000',
+          isLinkedToNext: true,
+          stepNumber: 1,
           link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Integral%20Design.%20More%20info?'
         },
         {
@@ -139,18 +152,23 @@ const AppContent = () => {
           price: 'FROM $195.000',
           installments: 'or 3 installments of $81.667',
           isUpgrade: true,
+          isLinkedFromPrev: true,
+          isLinkedToNext: true,
+          stepNumber: 2,
           link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Construction%20Documentation.%20More%20info?'
         },
         {
           icon: 'home_repair_service',
-          title: 'Direction & Execution',
+          title: 'Construction Direction',
           description: 'We handle everything from start to finish. Turnkey design.',
           price: '20% of budget',
           installments: '',
           isVirtual: true,
           isPercentage: true,
           isUpgrade: true,
-          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Project%20Execution.%20More%20info?'
+          isLinkedFromPrev: true,
+          stepNumber: 3,
+          link: 'https://wa.me/5491123369909?text=Hi,%20I\'m%20interested%20in%20Construction%20Direction.%20More%20info?'
         }
     ];
 
@@ -166,20 +184,25 @@ const AppContent = () => {
             <ProblemSolution />
             <FreeConsultation />
             
+            {/* Packs especiales primero, después de la charla gratuita */}
+            <Packs />
+
+            {/* Servicios individuales desplegables */}
             <ServicesSection 
               id="servicios"
               title={t('services.acoustic.title')} 
               highlight={t('services.acoustic.highlight')} 
               items={acousticServices} 
+              isAcoustic={true}
             />
             
             <ServicesSection 
               title={t('services.design.title')} 
               highlight={t('services.design.highlight')} 
               items={designServices} 
+              isDesign={true}
             />
             
-            <Packs />
             <AboutUs />
             
             {/* Instagram/Social Proof section */}

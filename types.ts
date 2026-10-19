@@ -14,6 +14,9 @@ export interface ServiceItem {
   isPercentage?: boolean;
   link?: string;
   isUpgrade?: boolean;
+  isLinkedToNext?: boolean;
+  isLinkedFromPrev?: boolean;
+  stepNumber?: number;
 }
 
 export interface PricingPack {
