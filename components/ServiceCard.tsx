@@ -36,19 +36,43 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ item }) => {
     return <p className={`${priceSizeClass} font-bold ${priceColorClass}`}>{priceString}</p>;
   };
 
+  const isLinked = item.isLinkedToNext || item.isLinkedFromPrev;
+
   return (
-    <div className={`rounded-4xl border transition-all duration-300 flex flex-col h-full group relative overflow-hidden 
+    <div className={`rounded-4xl border transition-all duration-300 flex flex-col h-full group relative overflow-visible 
         ${item.isUpgrade 
             ? 'bg-slate-50 dark:bg-slate-800/50 border-slate-200 border-dashed dark:border-slate-700 p-8 pt-12 shadow-sm' 
             : 'bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 p-8 shadow-sm'
         }
+        ${isLinked ? 'border-primary/40 ring-1 ring-primary/15' : ''}
         hover:shadow-xl hover:-translate-y-1
     `}>
       
+      {/* Desktop Visual Connector Arrow between consecutive steps */}
+      {item.isLinkedToNext && (
+        <div 
+          className="hidden md:flex absolute top-1/2 -right-4 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-primary text-primary items-center justify-center shadow-lg pointer-events-none group-hover:scale-110 transition-transform"
+          title={t('services.linked.hint')}
+        >
+          <Icon name="arrow_forward" className="text-sm font-bold" />
+        </div>
+      )}
+
       {/* Etiqueta UPGRADE */}
       {item.isUpgrade && (
-        <div className="absolute top-0 left-0 w-full bg-primary/10 text-primary py-1.5 text-[10px] font-bold tracking-widest uppercase text-center border-b border-primary/10">
+        <div className="absolute top-0 left-0 w-full bg-primary/10 text-primary py-1.5 text-[10px] font-bold tracking-widest uppercase text-center border-b border-primary/10 rounded-t-4xl">
             Upgrade
+        </div>
+      )}
+
+      {/* Linked Step Badges (Subtle) */}
+      {item.stepNumber && (
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold text-primary bg-primary/10 mb-4 border border-primary/20 w-fit">
+          <Icon 
+            name={item.stepNumber === 1 ? "looks_one" : item.stepNumber === 2 ? "looks_two" : "looks_3"} 
+            className="text-xs" 
+          /> 
+          {t(`services.step.${item.stepNumber}`)}
         </div>
       )}
 

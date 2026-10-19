@@ -9,7 +9,7 @@ export const Packs: React.FC = () => {
   const packsES: PricingPack[] = [
     {
       title: "Básico",
-      items: ["Medición Acústica Presencial", "Instalación y Supervisión"],
+      items: ["Medición Acústica Presencial", "Supervisión de la Instalación"],
       price: "$510.000",
       installments: "ó 3 cuotas de $213.333",
       discount: "5% OFF EXTRA",
@@ -27,7 +27,7 @@ export const Packs: React.FC = () => {
     },
     {
       title: "Premium",
-      items: ["Medición Acústica Presencial", "Instalación y Supervisión", "Diseño Integral (Presencial)", "Documentación de Obra", "Dirección y Ejecución de Obra"],
+      items: ["Medición Acústica Presencial", "Supervisión de la Instalación", "Diseño Integral (Presencial)", "Documentación de Obra", "Dirección de Obra"],
       price: "DESDE $1.485.000 + Obra",
       installments: "ó 3 cuotas de $618.333",
       discount: "10% OFF EXTRA",
@@ -39,7 +39,7 @@ export const Packs: React.FC = () => {
   const packsEN: PricingPack[] = [
     {
       title: "Basic",
-      items: ["In-Person Acoustic Measurement", "Installation & Supervision"],
+      items: ["In-Person Acoustic Measurement", "Installation Supervision"],
       price: "$510.000",
       installments: "or 3 installments of $213.333",
       discount: "5% OFF EXTRA",
@@ -57,7 +57,7 @@ export const Packs: React.FC = () => {
     },
     {
       title: "Premium",
-      items: ["In-Person Acoustic Measurement", "Installation & Supervision", "Integral Design (In-Person)", "Construction Documentation", "Direction & Execution"],
+      items: ["In-Person Acoustic Measurement", "Installation Supervision", "Integral Design (In-Person)", "Construction Documentation", "Construction Direction"],
       price: "FROM $1.485.000 + Works",
       installments: "or 3 installments of $618.333",
       discount: "10% OFF EXTRA",

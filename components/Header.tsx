@@ -27,8 +27,8 @@ export const Header: React.FC = () => {
 
   const navKeys = [
       { key: 'nav.home', id: 'inicio' },
-      { key: 'nav.services', id: 'servicios' },
       { key: 'nav.packs', id: 'packs' },
+      { key: 'nav.services', id: 'servicios' },
       { key: 'nav.about', id: 'nosotros' }
   ];
 
